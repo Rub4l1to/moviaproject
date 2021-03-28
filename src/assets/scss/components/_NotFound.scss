@@ -1,0 +1,50 @@
+.notFound {
+  width: 100vw;
+  height: 100vh;
+  background: url("../../img/p404.png");
+  @include flexbox(center, center);
+}
+
+.content {
+  max-width: 600px;
+  text-align: center;
+  color: $main-cl;
+  font-family: $main-font;
+
+  @include respond(base) {
+    padding: 0 20px;
+  }
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+
+  & > h2 {
+    font-size: 13em;
+    line-height: 1em;
+  }
+  & > h4 {
+    position: relative;
+    font-size: 2em;
+    margin: 10px 0 20px 0;
+    color: $third-cl;
+    background: $main-cl;
+    padding: 10px 20px;
+    display: inline-block;
+    @include respond(tab-port) {
+      font-size: 2.4em;
+    }
+  }
+  & > p {
+    font-weight: bold;
+    margin: 10px 0 30px;
+    line-height: 2em;
+
+    @include respond(base) {
+      font-size: 1.8em;
+    }
+    @include respond(tab-port) {
+      font-size: 2em;
+    }
+  }
+}

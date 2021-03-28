@@ -1,0 +1,23 @@
+// Abstracts
+@import "abstracts/mixins";
+@import "abstracts/variables";
+@import "abstracts/animations";
+
+// Base
+@import "base/resets";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+
+// Components react
+@import "components/notFound";
+@import "components/shared/btns";
+
+// Layout
+@import "layouts/grid";
+@import "layouts/navbar";
+@import "layouts/footer";
+
+// Pages
+@import "pages/home";
