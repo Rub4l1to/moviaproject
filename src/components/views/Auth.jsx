@@ -1,11 +1,24 @@
-import React, { Fragment } from 'react'
+import { useRoutes } from "hookrouter";
+import React, { Fragment } from "react";
+
+import { Header, Login, Register } from "../";
+
+const routes = {
+  "/": () => <Login />,
+  "/register": () => <Register />,
+};
 
 const Auth = () => {
-    return (
-        <Fragment>
-            Auth
-        </Fragment>
-    )
-}
+  const routeResult = useRoutes(routes);
+  return (
+    <Fragment>
+      <Header {...{ simple: true }} />
+      <section className="section-auth">
+        <div className="section-auth__form u-padding-grid"> {routeResult}</div>
+        <div className="section-auth__picture"></div>
+      </section>
+    </Fragment>
+  );
+};
 
-export default Auth
+export default Auth;

@@ -1,0 +1,16 @@
+input[type="search"] {
+  font-family: $main-font;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: $main-cl;
+  margin-left: 5px;
+  &::placeholder {
+    color: $fourth-cl;
+  }
+  &::-webkit-search-cancel-button {
+    display: none;
+
+  }
+}

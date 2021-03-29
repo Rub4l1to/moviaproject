@@ -9,14 +9,21 @@
 @import "base/typography";
 @import "base/utilities";
 
+// Shared
+@import "components/shared/btns";
+@import "components/shared/inputs";
+
+// SaSS Components
+@import "components/searchInput";
 
 // Components react
 @import "components/notFound";
-@import "components/shared/btns";
+
+
 
 // Layout
 @import "layouts/grid";
-@import "layouts/navbar";
+@import "layouts/header";
 @import "layouts/footer";
 
 // Pages

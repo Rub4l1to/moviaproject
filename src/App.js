@@ -9,6 +9,7 @@ import { NotFound, Auth, Home } from './components'
 
 const routes = {
   '/': () => <Auth />,
+  '/auth*': () => <Auth />,
   '/home': () => <Home />
   // '/products/:id': ({ id }) => <ProductDetails id={id} />
 };

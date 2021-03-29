@@ -15,3 +15,13 @@
 .u-padding-top-small {padding-top: 2rem;}
 .u-padding-top-medium {padding-top: 4em;}
 .u-padding-top-big {padding-top: 8rem;}
+
+
+.u-padding-grid{
+    @include respond(base) {
+        padding: 0 24px;
+    }
+    @include respond(tab-land) {
+        padding: 0 64px;
+    }
+}

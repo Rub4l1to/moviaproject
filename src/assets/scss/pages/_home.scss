@@ -1,0 +1,34 @@
+.section-auth {
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    column-gap: 40px;
+    height: 100vh;
+  
+    &__form {
+      // margin-left: 64px;
+      grid-row-start: 4;
+  
+      @include respond(base) {
+        grid-column: 1/12;
+      }
+      @include respond(tab-port) {
+        grid-column: 1/7;
+      }
+    }
+  
+    &__picture {
+      grid-column: 7/13;
+      grid-row: 1/-1;
+      background-image: url("../../img/picture1.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: none;
+  
+      @include respond(tab-port) {
+        display: block;
+      }
+    }
+  }

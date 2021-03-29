@@ -1,0 +1,35 @@
+.heading {
+  font-family: $main-font;
+  letter-spacing: 0;
+}
+
+.heading-logo {
+  color: $second-cl;
+  font-size: 42px;
+  font-weight: 800;
+  text-transform: uppercase;
+
+  &--sm {
+    font-size: 22px;
+  }
+}
+
+.heading-title {
+  color: $main-cl;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 39px;
+}
+
+.heading-secoundary {
+  color: $main-cl;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+.heading-subtitle {
+  color: $fourth-cl;
+  font-size: 16px;
+  line-height: 19px;
+}
