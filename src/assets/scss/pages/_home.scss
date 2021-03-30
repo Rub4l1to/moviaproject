@@ -7,11 +7,10 @@
     height: 100vh;
   
     &__form {
-      // margin-left: 64px;
-      grid-row-start: 4;
+      grid-row-start: 7;
   
       @include respond(base) {
-        grid-column: 1/12;
+        grid-column: 1/-1;
       }
       @include respond(tab-port) {
         grid-column: 1/7;

@@ -1,3 +1,25 @@
+.input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid $fourth-cl;
+  padding: 0 10px;
+  color: $fourth-cl;
+  font-family: $main-font;
+  font-size: 16px;
+  background: none;
+  box-sizing: border-box;
+
+  &__icon {
+    right: 0;
+    margin: 0px 12px 0 0;
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    color: $main-cl;
+    font-size: 18px;
+  }
+}
+
 input[type="search"] {
   font-family: $main-font;
   width: 100%;
@@ -11,6 +33,33 @@ input[type="search"] {
   }
   &::-webkit-search-cancel-button {
     display: none;
-
   }
+}
+
+input[type="checkbox"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  @include flexbox(center, center);
+  width: 18px;
+  height: 18px;
+  border: 1px solid $fourth-cl;
+  background-color: $fourth-cl;
+  padding: 5px;
+
+  &:checked:after {
+    color: $main-cl;
+    content: "\2713";
+  }
+  &:focus {
+    outline: none;
+  }
+}
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
 }

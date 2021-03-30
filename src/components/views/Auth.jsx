@@ -6,6 +6,7 @@ import { Header, Login, Register } from "../";
 const routes = {
   "/": () => <Login />,
   "/register": () => <Register />,
+  "/login": () => <Login />,
 };
 
 const Auth = () => {

@@ -4,9 +4,15 @@ import React, { Fragment, useState } from "react";
 import { FaTimes, FaSearch } from "react-icons/fa";
 
 const SeachInput = () => {
-  
+
   const [expand, setExpand] = useState(false);
   const [search, setSearch] = useState("");
+
+  if (search) {
+    navigate("/search")
+  } else {
+    navigate("/")
+  }
 
   return (
     <div className={`searchInput ${expand && "searchInput--expand"}`}>

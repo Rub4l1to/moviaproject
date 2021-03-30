@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { SubTitle, Title } from "..";
+import { Form, SubTitle, Title } from "..";
 
 const Login = () => {
   return (
@@ -14,9 +14,10 @@ const Login = () => {
       <SubTitle
         {...{
           text: "Por favor, rellena los siguientes campos de texto",
-          style: " heading heading-subtitle",
+          style: "heading heading-subtitle",
         }}
       />
+      <Form {...{isLogin: true}}/>
     </Fragment>
   );
 };

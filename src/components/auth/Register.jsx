@@ -1,7 +1,12 @@
 import React, { Fragment } from 'react'
-import { SubTitle, Title } from '..'
+import { Form, SubTitle, Title } from '..'
 
 const Register = () => {
+
+    const register = () =>{
+      console.log("Hola")
+    }
+
     return (
        <Fragment>
            <Title
@@ -17,6 +22,7 @@ const Register = () => {
           style: " heading heading-subtitle",
         }}
       />
+      <Form {...{isLogin: false}}/>
        </Fragment>
     )
 }

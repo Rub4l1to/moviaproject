@@ -1,23 +1,9 @@
-import { A } from "hookrouter";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import { SearchInput } from "..";
 import avatar from "../../assets/img/avatar.png";
+import { A } from "hookrouter";
 
 const Header = ({ simple }) => {
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  });
-
-  const [scrolled, setScrolled] = useState(false);
-
-  const handleScroll = () => {
-    // if (window.scrollY > 200) {
-    //   setScrolled(true);
-    // }
-    // else {
-    //   setScrolled(false);
-    // }
-  };
 
   let simpleMenu = (
     <Fragment>

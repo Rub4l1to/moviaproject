@@ -1,0 +1,61 @@
+.form {
+  max-width: 600px;
+  @include flexbox(space-between, center);
+  flex-wrap: wrap;
+
+  &__col {
+    // padding-bottom: 1px;
+    position: relative;
+    margin: 10px 0;
+
+    &--sm {
+      width: 100%;
+      margin: 10px 0;
+      @include respond(tab-port) {
+        width: 48%;
+        :not(:nth-child()) {
+          margin-left: 2em;
+        }
+      }
+    }
+    &--bg {
+      width: 100%;
+    }
+    &--flex {
+      @include flexbox(space-between, center);
+    }
+  }
+
+  &__error {
+    @include flexbox(flex-start !important, center);
+    padding: 10px 0 5px 0;
+    color: rgb(204, 39, 39);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: $main-font;
+    font-size: 12px;
+  }
+
+  &__redirect {
+    height: 100%;
+    display: block;
+    width: 100%;
+    color: $main-cl;
+    border: 1px solid $main-cl;
+    transition: background-color 300ms;
+    &:hover {
+      border: 1px solid #1d6ccc;
+    }
+  }
+
+  &__link{
+    color: $main-cl;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: $main-font;
+  }
+}
+
+.is-danger{
+  border: 1px solid red;
+}
