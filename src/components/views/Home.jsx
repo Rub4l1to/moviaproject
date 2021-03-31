@@ -1,11 +1,20 @@
-import React from 'react'
+import { navigate } from "hookrouter";
+import React, { useEffect } from "react";
+
+import { Header } from "../";
+import { getItemLS } from "../../hooks/LocalStorage";
 
 const Home = () => {
-    return (
-        <div>
-            Home
-        </div>
-    )
-}
+  if (!getItemLS("user")) {
+    navigate("/");
+  }
 
-export default Home
+  return (
+    <div>
+      <Header {...{ simple: false }} />
+      Home
+    </div>
+  );
+};
+
+export default Home;

@@ -1,11 +1,10 @@
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 // Icons
 import { A } from "hookrouter";
 import validate from '../../middleware/Validate';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { navigate } from "hookrouter";
-import { addUser } from '../../hooks/LocalStorage';
+import { checkUser } from '../../hooks/LocalStorage';
 
 const Form = ({ isLogin }) => {
 
@@ -14,13 +13,13 @@ const Form = ({ isLogin }) => {
     const [errors, setErrors] = useState({});
 
     useEffect(() => {
-        if (Object.keys(errors).length === 0) handleUser();
+        if (Object.keys(errors).length === 0) {
+            if(Object.keys(values).length > 0) handleUser();
+        }
     }, [errors])
 
-    const handleUser = () => {
-        addUser(values, isLogin);
-    }
-
+    const handleUser = () => checkUser(values, isLogin)  
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors(validate(values, isLogin));
@@ -35,11 +34,11 @@ const Form = ({ isLogin }) => {
 
     const RegisterInputs = (<Fragment>
         <div className="form__col  form__col--sm">
-            <input name="name" placeholder="Name" className={`input ${errors.name && 'is-danger'}`} type="text" value={values.name || ''} onChange={handleChange} />
+            <input name="name" autoComplete="off" placeholder="Name" className={`input ${errors.name && 'is-danger'}`} type="text" value={values.name || ''} onChange={handleChange} />
             {errors.name && <span className="form__error">{errors.name}</span>}
         </div>
         <div className="form__col  form__col--sm">
-            <input type="text" className={`input ${errors.surname && 'is-danger'}`} name="surname" placeholder="Surname" value={values.surname || ''} onChange={handleChange} />
+            <input type="text"  autoComplete="off" className={`input ${errors.surname && 'is-danger'}`} name="surname" placeholder="Surname" value={values.surname || ''} onChange={handleChange} />
             {errors.surname && <span className="form__error">{errors.surname}</span>}
         </div>
     </Fragment>)
@@ -78,6 +77,7 @@ const Form = ({ isLogin }) => {
                     value={values.password || ''}
                     className={`input ${errors.password && 'is-danger'}`}
                     onChange={handleChange}
+                    
                 />
                 {showPassword ?
                     <FaEyeSlash onClick={() => setPassword(!showPassword)} className="input__icon toggle-password" />

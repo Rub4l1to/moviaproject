@@ -1,7 +1,9 @@
+import { navigate } from "hookrouter";
 import { useRoutes } from "hookrouter";
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 
 import { Header, Login, Register } from "../";
+import { getItemLS } from "../../hooks/LocalStorage";
 
 const routes = {
   "/": () => <Login />,
@@ -11,6 +13,13 @@ const routes = {
 
 const Auth = () => {
   const routeResult = useRoutes(routes);
+
+  useEffect(() => {
+    if (getItemLS("user")) {
+      navigate("/home");
+    }
+  }, []);
+
   return (
     <Fragment>
       <Header {...{ simple: true }} />

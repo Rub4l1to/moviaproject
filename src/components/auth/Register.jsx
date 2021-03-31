@@ -2,11 +2,6 @@ import React, { Fragment } from 'react'
 import { Form, SubTitle, Title } from '..'
 
 const Register = () => {
-
-    const register = () =>{
-      console.log("Hola")
-    }
-
     return (
        <Fragment>
            <Title
