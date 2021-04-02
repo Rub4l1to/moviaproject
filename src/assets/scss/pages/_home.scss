@@ -1,33 +1,66 @@
 .section-auth {
-    max-width: 100vw;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    column-gap: 40px;
-    height: 100vh;
-  
-    &__form {
-      grid-row-start: 7;
-  
-      @include respond(base) {
-        grid-column: 1/-1;
-      }
-      @include respond(tab-port) {
-        grid-column: 1/7;
-      }
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  column-gap: 40px;
+  height: 100vh;
+
+  &__form {
+    grid-row-start: 7;
+
+    @include respond(base) {
+      grid-column: 1/-1;
     }
-  
-    &__picture {
-      grid-column: 7/13;
-      grid-row: 1/-1;
-      background-image: url("../../img/picture1.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      display: none;
-  
+    @include respond(tab-port) {
+      grid-column: 1/7;
+    }
+  }
+
+  &__picture {
+    grid-column: 7/13;
+    grid-row: 1/-1;
+    background-image: url("../../img/picture1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: none;
+
+    @include respond(tab-port) {
+      display: block;
+    }
+  }
+}
+
+.section-home {
+  @include flexbox(center, normal);
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  @include respond(tab-port) {
+    height: 650px;
+  }
+
+  &__picture {
+    & > img {
+      width: 100%;
+      object-fit: cover;
+      height: 500px;
       @include respond(tab-port) {
-        display: block;
+        height: 750px;
       }
     }
   }
+
+  &__info {
+    position: absolute;
+    bottom: 10%;
+    color: white;
+    left: 0;
+    @include respond(tab-port) {
+      top: auto;
+      bottom: 15%;
+    }
+  }
+}

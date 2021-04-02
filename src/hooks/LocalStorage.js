@@ -6,6 +6,8 @@ export const getItemLS = async (item) =>
 export const addItemLS = async (key, value) =>
   localStorage.setItem(key, JSON.stringify(value));
 
+export const removeItemLS = async (key) => localStorage.removeItem(key);
+
 export const checkUser = (values, isLogin) => {
   if (!values.remember && isLogin) {
     values = { ...values, remember: false };
@@ -26,4 +28,3 @@ export const handleLogin = async (email, password) => {
   );
   return user ? { email } : null;
 };
- 

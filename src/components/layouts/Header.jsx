@@ -2,9 +2,9 @@ import React, { Fragment } from "react";
 import { SearchInput } from "..";
 import avatar from "../../assets/img/avatar.png";
 import { A } from "hookrouter";
+import { removeItemLS } from "../../hooks/LocalStorage";
 
 const Header = ({ simple }) => {
-
   let simpleMenu = (
     <Fragment>
       <div className={`heading-logo ${!simple && "heading-logo--sm"}`}>
@@ -24,6 +24,9 @@ const Header = ({ simple }) => {
           </A>
           <A href="/home" className="nav__item">
             Watchlist
+          </A>
+          <A href="/" className="nav__item" onClick={() => removeItemLS("user")}>
+            Logout
           </A>
         </div>
       </nav>

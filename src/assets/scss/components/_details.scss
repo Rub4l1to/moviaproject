@@ -1,0 +1,42 @@
+.details {
+  color: $main-cl;
+  font-family: $main-font;
+
+  &__title {
+    font-size: 52px;
+    font-weight: bold;
+  }
+
+  &__score {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 1em;
+
+    & > svg {
+      color: #f6d700;
+    }
+
+    & > span {
+      margin-left: 0.5em;
+    }
+  }
+  &__category {
+    font-weight: bold;
+    margin-top: 1em;
+    font-size: 12px;
+    @include respond(tab-port) {
+      font-size: 16px;
+    }
+  }
+
+  &__description {
+    color: #ffffff;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: bold;
+    width: calc(100%);
+    max-width: 650px;
+    line-height: 20px;
+    margin-top: 1em;
+  }
+}

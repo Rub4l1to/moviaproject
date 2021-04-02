@@ -1,7 +1,7 @@
 .header {
   padding-top: 15px;
   padding-bottom: 15px;
-  @include width(100vw, 100vw);
+  // @include width(100vw, 100vw);
   display: grid;
   align-items: center;
   column-gap: 20px;
@@ -9,6 +9,8 @@
   grid-template-columns: auto 1fr auto auto;
   background-color: transparent;
   position: fixed;
+  width: 100%;
+  z-index: 1;
 
   &--bg {
     background-color: $third-cl;

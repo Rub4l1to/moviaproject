@@ -5,6 +5,7 @@ import { A } from "hookrouter";
 import validate from '../../middleware/Validate';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { checkUser } from '../../hooks/LocalStorage';
+import { navigate } from "hookrouter";
 
 const Form = ({ isLogin }) => {
 
@@ -23,6 +24,9 @@ const Form = ({ isLogin }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors(validate(values, isLogin));
+        if(isLogin){
+            navigate("/home");
+        }
     };
 
     const handleChange = (e) => {
@@ -77,6 +81,7 @@ const Form = ({ isLogin }) => {
                     value={values.password || ''}
                     className={`input ${errors.password && 'is-danger'}`}
                     onChange={handleChange}
+                    autoComplete="current-password"
                     
                 />
                 {showPassword ?

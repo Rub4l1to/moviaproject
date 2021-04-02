@@ -6,21 +6,46 @@
   transition: background-color 300ms;
   padding: 15px 20px !important;
   border: none !important;
-  width:100%;
+  width: 100%;
 
   &--blue {
     background-color: $second-cl !important;
-
+    border: 1px solid #275791;
     &:hover {
       background-color: #275791 !important;
-      border: 1px solid #275791;
     }
   }
 
   &--transparent {
     background-color: transparent;
+    border: 1px solid white !important;
     &:hover {
+      border: 1px solid #1d6ccc !important;
       background-color: #1d6ccc;
     }
+  }
+  &--sm {
+    width: 100%;
+    @include flexbox(center, center);
+
+    &:not(:first-child) {
+      margin-top: 10px;
+      @include respond(tab-land) {
+        margin-top: 0;
+        margin-left: 10px;
+      }
+    }
+  }
+  & > svg {
+    margin-right: 5px;
+  }
+}
+
+.buttons {
+  @include flexbox(flex-start, flex-start, column);
+  @include respond(tab-land) {
+    @include flexbox(center, flex-start, row);
+    width: 60%;
+    max-width: 600px;
   }
 }

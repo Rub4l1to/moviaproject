@@ -1,19 +1,17 @@
 import { navigate } from "hookrouter";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 import { FaTimes, FaSearch } from "react-icons/fa";
 
 const SeachInput = () => {
-
   const [expand, setExpand] = useState(false);
   const [search, setSearch] = useState("");
 
-  if (search) {
-    navigate("/search")
-  } else {
-    navigate("/")
-  }
+  useEffect(() => {
+    search.length === 0 ? navigate("/home") : navigate("/search");
+  }, [search])
 
+ 
   return (
     <div className={`searchInput ${expand && "searchInput--expand"}`}>
       <FaSearch
