@@ -22,5 +22,8 @@
 ![Webpack](https://img.shields.io/badge/-Webpack-%232C3A42?style=flat-square&logo=webpack)
 ![Sass](https://img.shields.io/badge/-Sass-%23CC6699?style=flat-square&logo=sass&logoColor=ffffff)
 
+## ⭐️ Future 
+- In the future will be developed with react redux
+
 ```⭐️ From [Rub4lito](https://github.com/Rub4l1to)```
 
