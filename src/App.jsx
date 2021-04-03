@@ -39,14 +39,12 @@ const App = () => {
 
   return (
     <Fragment>
-      {routeResult ? (
+      {(
         <Fragment>
           <Header {...{ simple: login }} />
           {routeResult}
         </Fragment>
-      ) : (
-        <NotFound />
-      )}
+      ) || <NotFound />}
       {/* {login && <Footer />} */}
     </Fragment>
   );

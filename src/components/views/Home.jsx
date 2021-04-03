@@ -7,12 +7,13 @@ import { FaPlayCircle, FaPlus, FaStar } from "react-icons/fa";
 import { A } from "hookrouter";
 import { Slider } from "..";
 import { navigate } from "hookrouter";
+import { getItemLS } from "../../hooks/LocalStorage";
 
 const Home = ({ setLogin, films }) => {
   const [watchlist, setWatchlist] = useState([]);
   
-  if (localStorage.getItem("user") === null) {
-    navigate("/");
+  if (getItemLS("user") === []) {
+    navigate("/auth/login");
   }
 
   useEffect(() => {
