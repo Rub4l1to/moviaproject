@@ -6,9 +6,9 @@
 [![Gmail Badge](https://img.shields.io/badge/-adrian.perez.garcia2018@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:adrian.perez.garcia2018@gmail.com)](mailto:mailharshkhatri@gmail.com)
 
 ## 💬 Description
-- This application is a design based on the Netflix application but only for movies. 
+- This application is a design based on Netflix only for movies. 
 
-## 💬 Functions
+## 👉  Functions
 - Register
 - Login
 - Watch trailers
@@ -22,7 +22,7 @@
 ![Webpack](https://img.shields.io/badge/-Webpack-%232C3A42?style=flat-square&logo=webpack)
 ![Sass](https://img.shields.io/badge/-Sass-%23CC6699?style=flat-square&logo=sass&logoColor=ffffff)
 
-## ⭐️ Future 
+## 💥 Future 
 - In the future will be developed with react redux
 
 ```⭐️ From [Rub4lito](https://github.com/Rub4l1to)```
