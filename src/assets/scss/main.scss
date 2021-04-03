@@ -17,9 +17,13 @@
 @import "components/searchInput";
 @import "components/details";
 
+
 // Components react
-@import "components/notFound";
-@import "components/Form";
+@import "components/react/NotFound";
+@import "components/react/Form";
+@import "components/react/Card";
+@import "components/react/Slider";
+@import "components/react/Modal";
 
 // Layout
 @import "layouts/grid";

@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
-import { Form, SubTitle, Title } from '..'
+import React, { Fragment } from "react";
+import { Form, SubTitle, Title } from "..";
 
 const Register = () => {
-    return (
-       <Fragment>
-           <Title
+  return (
+    <Fragment>
+      <Title
         {...{
           text: "Crear cuenta",
           style:
@@ -17,9 +17,9 @@ const Register = () => {
           style: " heading heading-subtitle",
         }}
       />
-      <Form {...{isLogin: false}}/>
-       </Fragment>
-    )
-}
+      <Form {...{ isLogin: false }} />
+    </Fragment>
+  );
+};
 
-export default Register
+export default Register;

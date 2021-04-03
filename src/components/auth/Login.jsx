@@ -17,7 +17,7 @@ const Login = () => {
           style: "heading heading-subtitle",
         }}
       />
-      <Form {...{isLogin: true}}/>
+      <Form {...{ isLogin: true }} />
     </Fragment>
   );
 };

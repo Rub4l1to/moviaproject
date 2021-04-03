@@ -9,9 +9,8 @@ const SeachInput = () => {
 
   useEffect(() => {
     search.length === 0 ? navigate("/home") : navigate("/search");
-  }, [search])
+  }, [search]);
 
- 
   return (
     <div className={`searchInput ${expand && "searchInput--expand"}`}>
       <FaSearch

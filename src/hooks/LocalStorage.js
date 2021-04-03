@@ -1,4 +1,4 @@
-import { login, register } from "../components/thunks";
+import { login, register } from "../thunks";
 
 export const getItemLS = async (item) =>
   localStorage.getItem(item) ? JSON.parse(localStorage.getItem(item)) : [];
