@@ -1,4 +1,4 @@
-import { navigate } from "hookrouter";
+
 import React, { useEffect } from "react";
 
 import { Header } from "../";
@@ -8,10 +8,9 @@ import { getItemLS } from "../../hooks/LocalStorage";
 import bg from "../../assets/img/cartelera.jpg";
 import { FaPlayCircle, FaPlus, FaStar } from "react-icons/fa";
 import { A } from "hookrouter";
-<<<<<<< HEAD
 import { Slider } from "..";
 import { navigate } from "hookrouter";
-import { getItemLS } from "../../hooks/LocalStorage";
+
 
 const Home = ({ setLogin, films }) => {
   const [watchlist, setWatchlist] = useState([]);
@@ -19,10 +18,6 @@ const Home = ({ setLogin, films }) => {
   if (getItemLS("user") === []) {
     navigate("/auth/login");
   }
-=======
->>>>>>> parent of c89eb28 (New Updates)
-
-const Home = ({ setLogin }) => {
   useEffect(() => {
     setLogin(true);
   }, []);
