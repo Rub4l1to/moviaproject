@@ -1,12 +1,12 @@
 import { navigate } from "hookrouter";
-import { getItemLS, addItemLS, handleLogin } from "../hooks/LocalStorage";
-import { userExists } from "../middleware/UserExists";
+import { getItemLS, addItemLS, handleLogin } from "../../hooks/LocalStorage";
+import { userExists } from "../../middleware/UserExists";
 
 export const login = async (data) => {
   const { email, password } = data;
 
   // Check if users exists
-  const exists = await userExists(data, true);
+  const exists = userExists(data, true);
 
   if (exists) {
     // Add user

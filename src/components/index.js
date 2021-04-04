@@ -17,10 +17,4 @@ import Title from './shared/Title';
 import SubTitle from './shared/SubTitle';
 import Form from './shared/Form';
 
-// Privates
-import Modal from './privates/ModalWindow';
-import Slider from './privates/Slider';
-import Card from './privates/Card';
-import Film from './privates/Film';
-
-export { Film, Modal, Slider, Card, Form, NotFound, Home, Header, Auth, SearchInput, Search, Login, Register, Title, SubTitle };
+export { Form, NotFound, Home, Header, Auth, SearchInput,Search, Login, Register, Title, SubTitle };
