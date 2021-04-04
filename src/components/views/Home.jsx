@@ -12,10 +12,11 @@ import { getItemLS } from "../../hooks/LocalStorage";
 const Home = ({ setLogin, films }) => {
   const [watchlist, setWatchlist] = useState([]);
 
+  if (!localStorage.getItem("user")) {
+    navigate("/");
+  }
+
   useEffect(() => {
-    if (getItemLS("user") === []) {
-      navigate("/");
-    }
     setLogin(false);
   }, []);
 

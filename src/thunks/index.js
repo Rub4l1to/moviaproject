@@ -6,7 +6,7 @@ export const login = async (data) => {
   const { email, password } = data;
 
   // Check if users exists
-  const exists = await userExists(data, true);
+  const exists = await userExists(data);
 
   if (exists) {
     // Add user
@@ -23,7 +23,7 @@ export const register = async (data) => {
   const users = await getItemLS("users");
 
   // Check if users exists
-  const exists = !userExists(data);
+  const exists = await userExists(data);
 
   if (!exists) {
     // Add user

@@ -23,7 +23,7 @@ const Form = ({ isLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate(values, isLogin));
-    if (getItemLS("user") !== []) {
+    if (localStorage.getItem("user")) {
       navigate("/home");
     }
   };
