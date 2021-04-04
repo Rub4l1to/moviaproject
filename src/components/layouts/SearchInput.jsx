@@ -1,17 +1,12 @@
 import { navigate } from "hookrouter";
 import React, { Fragment, useEffect, useState } from "react";
-
+import { getItemLS } from "../../hooks/LocalStorage";
 import { FaTimes, FaSearch } from "react-icons/fa";
 
 const SeachInput = () => {
   const [expand, setExpand] = useState(false);
   const [search, setSearch] = useState("");
 
-  useEffect(() => {
-    search.length === 0 ? navigate("/home") : navigate("/search");
-  }, [search])
-
- 
   return (
     <div className={`searchInput ${expand && "searchInput--expand"}`}>
       <FaSearch
@@ -24,7 +19,7 @@ const SeachInput = () => {
             type="search"
             className="search__input"
             placeholder="Títulos, personas, géneros"
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => setSearch(e.target.value)  }
             value={search}
           />
           {search && (

@@ -25,7 +25,11 @@ const Header = ({ simple }) => {
           <A href="/home" className="nav__item">
             Watchlist
           </A>
-          <A href="/" className="nav__item" onClick={() => removeItemLS("user")}>
+          <A
+            href="/"
+            className="nav__item"
+            onClick={() => removeItemLS("user")}
+          >
             Logout
           </A>
         </div>

@@ -1,0 +1,43 @@
+.card {
+  outline: none;
+  height: 412px !important;
+  position: relative;
+  overflow: hidden;
+
+  &:hover &__interactions {
+    opacity: 1;
+  }
+
+  &__billboard {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__interactions {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    opacity: 0;
+    background: rgba($second-cl, 0.6);
+    @include flexbox(normal, flex-end);
+    transition: all 300ms;
+  }
+
+  &__icons {
+    padding: 20px 5px;
+    & > svg {
+      font-size: 30px;
+      cursor: pointer;
+
+      color: $main-cl;
+
+      &:first-child {
+        margin-left: 0.3em;
+        margin-right: 0.3em;
+      }
+    }
+  
+  }
+}

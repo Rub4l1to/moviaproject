@@ -1,0 +1,73 @@
+.modal {
+  width: 1135px;
+  height: 800px;
+  position: relative;
+  background-color: #141414;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  outline: none;
+  animation: fadeEffect ease 0.5s;
+
+  &__jumbotron {
+    width: 100%;
+    height: 380px;
+  }
+  &__picture {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: 90%;
+  }
+
+  &__close {
+    font-size: 40px;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    cursor: pointer;
+
+    & > svg {
+      background-color: $third-cl;
+      border-radius: 50%;
+      padding: 8px;
+
+      transition: transform 0.25s, opacity 0.25s;
+      &:hover {
+        transform: rotate(270deg);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: auto 450px;
+    column-gap: 20px;
+  }
+
+  &__itemInfo {
+    font-family: Montserrat;
+    font-size: 16px;
+    line-height: 20px;
+    @include flexbox(flex-start, normal);
+    margin: 15px 0;
+
+    & > span {
+      display: block;
+      margin-left: 5px;
+      width: 80%;
+    }
+
+    h6 {
+      color: $fourth-cl;
+      width: 70px;
+    }
+  }
+}
+
+.ReactModal__Overlay {
+  z-index: 200 !important;
+  background-color: rgba(24, 23, 23, 0.897) !important;
+}

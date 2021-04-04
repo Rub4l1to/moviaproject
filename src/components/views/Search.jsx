@@ -1,12 +1,7 @@
 import React, { Fragment, useEffect } from "react";
-import { Header } from "..";
 
 const Search = ({ setLogin }) => {
-  useEffect(() => {
-    setLogin(true);
-  }, []);
-
-  
+  useEffect(() => setLogin(false), []);
 
   return <Fragment>Search</Fragment>;
 };

@@ -39,14 +39,10 @@ const App = () => {
 
   return (
     <Fragment>
-      {(
-        <Fragment>
-          <Header {...{ simple: login }} />
-          {routeResult}
-        </Fragment>
-      ) || <NotFound />}
-      {/* {login && <Footer />} */}
+      <Header {...{ simple: login }} />
+      {routeResult || <NotFound />}
     </Fragment>
   );
 };
 export default App;
+// {/* {login && <Footer />} */}
