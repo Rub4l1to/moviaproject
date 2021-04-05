@@ -2,6 +2,7 @@
 import NotFound from "./layouts/NotFound";
 import Header from "./layouts/Header";
 import SearchInput from "./layouts/SearchInput";
+import Footer from "./layouts/Footer";
 
 // Views
 import Home from "./views/Home";
@@ -23,4 +24,4 @@ import Slider from './privates/Slider';
 import Card from './privates/Card';
 import Film from './privates/Film';
 
-export { Film, Modal, Slider, Card, Form, NotFound, Home, Header, Auth, SearchInput, Search, Login, Register, Title, SubTitle };
+export {Footer,  Film, Modal, Slider, Card, Form, NotFound, Home, Header, Auth, SearchInput, Search, Login, Register, Title, SubTitle };

@@ -2,6 +2,7 @@
   padding-top: 15px;
   padding-bottom: 15px;
   // @include width(100vw, 100vw);
+  z-index: 10;
   display: grid;
   align-items: center;
   column-gap: 20px;
@@ -10,7 +11,7 @@
   background-color: transparent;
   position: fixed;
   width: 100%;
-  z-index: 1;
+ 
 
   &--bg {
     background-color: $third-cl;

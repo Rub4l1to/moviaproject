@@ -1,13 +1,25 @@
 import React from "react";
 import Modal from "react-modal";
-import { FaPlayCircle, FaPlus, FaStar, FaTimes } from "react-icons/fa";
+import {
+  FaPlayCircle,
+  FaPlus,
+  FaStar,
+  FaTimes,
+  FaTrashAlt,
+} from "react-icons/fa";
 import { A } from "hookrouter";
 import cleanUrl from "../../middleware/CleanURL";
 
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#main");
 
-const ModalWindow = ({ el, modal, showModal }) => {
+const ModalWindow = ({
+  el,
+  modal,
+  showModal,
+  handleFav,
+  handleDeleteFav,
+  fav,
+}) => {
   const { Title, Poster, Language, Year, Released, Plot, Genre, Actors } = el;
 
   return (
@@ -33,17 +45,19 @@ const ModalWindow = ({ el, modal, showModal }) => {
             </div>
           </div>
           <div className="details__description  u-margin-bottom-small">
-            <p>
-             {Plot}
-            </p>
+            <p>{Plot}</p>
           </div>
           <div className="buttons--big buttons">
             <A className="btn btn--sm btn--blue" href="#">
               <FaPlayCircle />
               <span> Watch trailer</span>
             </A>
-            <A className="btn btn--sm btn--transparent" href="#">
-              <FaPlus />
+            <A
+              className="btn btn--sm btn--transparent"
+              href="#"
+              onClick={fav ? handleDeleteFav : handleFav}
+            >
+              {fav ? <FaTrashAlt /> : <FaPlus />}
               <span>Watchlist</span>
             </A>
           </div>

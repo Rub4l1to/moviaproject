@@ -31,3 +31,8 @@ export const register = async (data) => {
     navigate("/");
   }
 };
+
+
+export const addFavFilm = () =>{
+  
+}

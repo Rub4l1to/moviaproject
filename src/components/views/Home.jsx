@@ -1,46 +1,31 @@
-// import { navigate } from "hookrouter";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useCallback, useEffect, useState } from "react";
 
 // Images
 import bg from "../../assets/img/cartelera.jpg";
+
+// Icons
 import { FaPlayCircle, FaPlus, FaStar } from "react-icons/fa";
+
+// Routing
 import { A } from "hookrouter";
-import { Slider } from "..";
 import { navigate } from "hookrouter";
-import { getItemLS } from "../../hooks/LocalStorage";
+
+// Components
+import { Slider, Footer } from "..";
 
 const Home = ({ setLogin, films }) => {
-  const [watchlist, setWatchlist] = useState([]);
+  const [watchlist, updateWatchlist] = useState([]);
 
   if (!localStorage.getItem("user")) {
     navigate("/");
   }
 
   useEffect(() => {
-    setLogin(false);
+    setLogin(false)
+    setInterval(() => {
+      updateWatchlist(JSON.parse(localStorage.getItem("favs")) || [])
+    }, 100);
   }, []);
-
-  const section_films = (
-    <Fragment>
-      <section className="section-films u-margin-top-medium u-padding-grid">
-        <div className="section-pictures__title-container">
-          <h2 className="heading heading-title">Popular</h2>
-        </div>
-        <Slider {...{ films }} />
-      </section>
-    </Fragment>
-  );
-
-  const section_watchlist = (
-    <Fragment>
-      <section className="u-margin-top-medium u-padding-grid">
-        <div className="section-pictures__title-container">
-          <h2 className="heading heading-title">Watchlist</h2>
-        </div>
-        <Slider />
-      </section>
-    </Fragment>
-  );
 
   return (
     <Fragment>
@@ -81,11 +66,44 @@ const Home = ({ setLogin, films }) => {
         </article>
       </section>
 
-      {films && section_films}
+      {watchlist.length > 0 && (
+        <section className="u-margin-top-medium u-padding-grid">
+          <div className="section-pictures__title-container">
+            <h2 className="heading heading-title">Watchlist</h2>
+          </div>
+          <Slider {...{ films: watchlist, favFilms: true }} />
+        </section>
+      )}
+
+      {films && (
+        <section className="section-films u-margin-top-medium u-padding-grid">
+          <div className="section-pictures__title-container">
+            <h2 className="heading heading-title">Popular</h2>
+          </div>
+          <Slider {...{ films }} />
+        </section>
+      )}
+
+      <Footer />
     </Fragment>
   );
 };
 
 export default Home;
 
-// {watchlist && section_watchlist}
+// {watchlist.length > 0 && section_watchlist}
+// useEffect(() => {
+//   localStorage.setItem("favs", JSON.stringify(watchlist));
+//   console.log(watchlist);
+// let data = localStorage.getItem("favs");
+// if (data != null) {
+//   updateWatchlist(JSON.parse(data));
+// }
+// }, [watchlist]);
+
+// const loadNewData = () => {
+//   let data = localStorage.getItem("favs");
+//   if (data != null) {
+//     updateWatchlist(JSON.parse(data));
+//   }
+// }

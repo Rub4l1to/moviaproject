@@ -11,7 +11,7 @@ import { Film } from "..";
 
 Swiper.use([Navigation]);
 
-const Slider = ({ films }) => {
+const Slider = ({ films, favFilms }) => {
   const swiper = useRef(null);
 
   useEffect(() => {
@@ -71,7 +71,7 @@ const Slider = ({ films }) => {
           <div className="swiper-wrapper">
             {films.map((el, key) => (
               <div className="swiper-slide" key={key}>
-                <Film {...{ el }} />
+                <Film {...{ el, favFilms }} />
               </div>
             ))}
           </div>

@@ -22,7 +22,7 @@ const App = () => {
   const routes = {
     "/": () => <Auth {...{ setLogin }} />,
     "/auth*": () => <Auth {...{ setLogin }} />,
-    "/home": () => <Home {...{ setLogin, films }} />,
+    "/home": () => <Home {...{ setLogin, films}} />,
     "/search": () => <Search {...{ setLogin, films }} />,
     // "/search/:param":  ({ param })  => <Search {...{ setLogin, films, param }} />,
   };

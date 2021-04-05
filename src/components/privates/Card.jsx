@@ -1,13 +1,18 @@
-import React from "react";
-import { FaEye, FaPlus } from "react-icons/fa";
+import React, { useEffect } from "react";
+import { FaEye, FaPlus, FaTrashAlt } from "react-icons/fa";
 
-const Card = ({ poster, showModal }) => {
+const Card = ({ poster, showModal, handleFav, handleDeleteFav, fav }) => {
+
   return (
     <div className="card">
       <img className="card__billboard" src={poster} alt="" />
       <div className="card__interactions">
         <div className="card__icons">
-          <FaPlus />
+          {fav ? (
+            <FaTrashAlt onClick={handleDeleteFav} />
+          ) : (
+            <FaPlus onClick={handleFav} />
+          )}
           <FaEye onClick={() => showModal(true)} />
         </div>
       </div>
@@ -16,4 +21,3 @@ const Card = ({ poster, showModal }) => {
 };
 
 export default Card;
-// {fav ? <FaTrashAlt /> : <FaPlus onClick={handleFilm} />}
