@@ -23,16 +23,13 @@ const App = () => {
     "/": () => <Auth {...{ setLogin }} />,
     "/auth*": () => <Auth {...{ setLogin }} />,
     "/home": () => <Home {...{ setLogin, films}} />,
-    "/search": () => <Search {...{ setLogin, films }} />,
-    // "/search/:param":  ({ param })  => <Search {...{ setLogin, films, param }} />,
+    "/home/:param":  ({ param })  => <Home {...{ setLogin, films, param}} />,
   };
 
   const routeResult = useRoutes(routes);
 
   const getData = async () => {
-    const {
-      data: { results },
-    } = await getFilms();
+    const { data: { results } } = await getFilms();
     const omdb = await loadFilms(results);
     setFilms(omdb);
   };
@@ -45,4 +42,3 @@ const App = () => {
   );
 };
 export default App;
-// {/* {login && <Footer />} */}

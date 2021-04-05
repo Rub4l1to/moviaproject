@@ -3,9 +3,14 @@
   font-family: $main-font;
 
   &__title {
-    font-size: 52px;
+    font-size: 35px;
     font-weight: bold;
     padding-bottom: 20px;
+
+    &--year{
+      font-size: 14px;
+      padding-bottom: 20px;
+    }
   }
 
   &__score {

@@ -9,8 +9,8 @@ import { addItemLS, getItemLS } from "../../hooks/LocalStorage";
 import cleanUrl from "../../middleware/CleanURL";
 import { favFilmExists } from "../../middleware/FavFilmExist";
 
-const Film = ({ el, favFilms }) => {
-  const { Id, Poster } = el;
+const Film = ({ element, favFilms }) => {
+  const { Id, Poster } = element;
 
   const [modal, showModal] = useState(false);
   const [fav, setFav] = useState(false);
@@ -25,7 +25,7 @@ const Film = ({ el, favFilms }) => {
 
     if (!existsFilm) {
       const favs = await getItemLS("favs");
-      addItemLS("favs", [...favs, el]);
+      addItemLS("favs", [...favs, element]);
       setFav(!fav);
     }
   };
@@ -41,21 +41,12 @@ const Film = ({ el, favFilms }) => {
   };
 
   return (
-    <Fragment>
-      <Card
-        {...{
-          poster: cleanUrl(Poster),
-          showModal,
-          handleFav,
-          handleDeleteFav,
-          fav,
-          setFav,
-        }}
-      />
+    <>
+      <Card {...{  poster: cleanUrl(Poster), showModal, handleFav, handleDeleteFav, fav, setFav }}/>
       {modal && (
-        <Modal {...{ el, modal, showModal, handleFav, handleDeleteFav, fav }} />
+        <Modal {...{ element, modal, showModal, handleFav, handleDeleteFav, fav }} />
       )}
-    </Fragment>
+    </>
   );
 };
 

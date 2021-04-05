@@ -12,13 +12,14 @@ import { Film } from "..";
 Swiper.use([Navigation]);
 
 const Slider = ({ films, favFilms }) => {
+
   const swiper = useRef(null);
 
   useEffect(() => {
     swiper.current = new Swiper(".swiper-container", {
       effect: "coverflow",
-      grabCursor: true,
       mousewheelControl: true,
+      grabCursor: true,
       spaceBetween: 20,
       observer: true,
       coverflowEffect: {
@@ -30,7 +31,7 @@ const Slider = ({ films, favFilms }) => {
       },
       breakpoints: {
         0: {
-          slidesPerView: 6.5,
+          // slidesPerView: 6.2,
         },
         320: {
           slidesPerView: 1,
@@ -65,13 +66,13 @@ const Slider = ({ films, favFilms }) => {
   }, []);
 
   return (
-    <div className="u-margin-top-medium u-margin-bottom-medium">
+    <div className="u-margin-top-medium u-margin-bottom-medium slider">
       <div className="swiperMainContainer">
         <div className="swiper-container">
           <div className="swiper-wrapper">
-            {films.map((el, key) => (
+            {films.map((element, key) => (
               <div className="swiper-slide" key={key}>
-                <Film {...{ el, favFilms }} />
+                <Film {...{ element, favFilms }} />
               </div>
             ))}
           </div>

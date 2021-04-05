@@ -23,5 +23,6 @@ import Modal from './privates/ModalWindow';
 import Slider from './privates/Slider';
 import Card from './privates/Card';
 import Film from './privates/Film';
+import Hero from './privates/Hero';
 
-export {Footer,  Film, Modal, Slider, Card, Form, NotFound, Home, Header, Auth, SearchInput, Search, Login, Register, Title, SubTitle };
+export { Hero, Footer, Film, Modal, Slider, Card, Form, NotFound, Home, Header, Auth, SearchInput, Search, Login, Register, Title, SubTitle };

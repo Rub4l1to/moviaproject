@@ -75,7 +75,7 @@
   color: $main-cl;
   font-family: $main-font;
   @include flexbox(flex-start, center);
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 
   & > label {
     margin-left: 10px;
@@ -89,24 +89,3 @@
     }
   }
 }
-
-//   &__info {
-//     grid-column: 2/3;
-
-//     & > h1 {
-//       grid-column: 1/2;
-//       grid-row: 1/2;
-//       align-self: flex-end;
-//     }
-//   }
-
-//   &__company {
-//     grid-column: 3/4;
-//   }
-
-//   &__links {
-//     grid-column: 4/5;
-//   }
-//   &__form {
-//     grid-column: 5/6;
-//   }

@@ -1,6 +1,6 @@
 .modal {
   width: 1135px;
-  height: 800px;
+  padding: 10px 0 20px 0;
   position: relative;
   background-color: #141414;
   top: 50%;
@@ -22,18 +22,18 @@
   }
 
   &__close {
-    font-size: 40px;
+    font-size: 50px;
     position: absolute;
     top: 30px;
     right: 50px;
     cursor: pointer;
 
     & > svg {
-      background-color: $third-cl;
+      // background-color: $third-cl;
       border-radius: 50%;
       padding: 8px;
 
-      transition: transform 0.25s, opacity 0.25s;
+      // transition: transform 0.25s, opacity 0.25s;
       &:hover {
         transform: rotate(270deg);
         opacity: 1;

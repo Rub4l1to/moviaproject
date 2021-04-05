@@ -13,14 +13,14 @@ import cleanUrl from "../../middleware/CleanURL";
 Modal.setAppElement("#main");
 
 const ModalWindow = ({
-  el,
+  element,
   modal,
   showModal,
   handleFav,
   handleDeleteFav,
   fav,
 }) => {
-  const { Title, Poster, Language, Year, Released, Plot, Genre, Actors } = el;
+  const { Title, Poster, Language, Year, Released, Plot, Genre, Actors } = element;
 
   return (
     <Modal isOpen={modal} className="modal">
@@ -34,6 +34,7 @@ const ModalWindow = ({
 
       <div className="modal__info u-margin-top-medium">
         <div className="details u-padding-grid">
+        <h2 className="details__title--year">{Year}</h2>
           <h2 className="details__title">{Title}</h2>
           <div className="details__info">
             <div className="details__score">
