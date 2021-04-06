@@ -23,7 +23,7 @@ const App = () => {
     "/": () => <Auth {...{ setLogin }} />,
     "/auth*": () => <Auth {...{ setLogin }} />,
     "/home": () => <Home {...{ setLogin, films}} />,
-    "/home/:param":  ({ param })  => <Home {...{ setLogin, films, param}} />,
+    "/search/:param":  ({ param })  => <Home {...{ setLogin, films, param}} />,
   };
 
   const routeResult = useRoutes(routes);

@@ -9,7 +9,6 @@ const Search = ({ films, param }) => {
   }, [param]);
 
   const checkParam = () => {
-    console.log("--------------------- NUEVO --------------------------");
     let data = films.filter((element) =>
       element.Title.toUpperCase()
         .split(" ")
@@ -24,10 +23,18 @@ const Search = ({ films, param }) => {
   return (
     <Fragment>
       <section className="u-padding-grid  section-titles">
-        {filmsSearch.length !== 0 &&
-          filmsSearch.map((element, key) => (
-            <span key={key}>{element.Title}</span>
-          ))}
+        <p className="heading--search">Movies related to:</p>
+        <div>
+          {filmsSearch.length !== 0 &&
+            filmsSearch.map((element, key) => (
+              <Fragment>
+                <span className="section-titles__related" key={key}>
+                  {element.Title}
+                  <span className="section-titles__line"> | </span>
+                </span>
+              </Fragment>
+            ))}
+        </div>
       </section>
       <section className="u-padding-grid u-margin-top-medium section-list">
         {filmsSearch.length === 0 ? (

@@ -14,7 +14,7 @@ const SeachInput = () => {
     
     if(localStorage.getItem('user')){
       if(search.length === 0) navigate(`/home`)
-      if(search.length >= 1) navigate(`/home/${search}`)
+      if(search.length >= 1) navigate(`/search/${search}`)
     }
   }, [search])
 
