@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useCallback, useEffect, useState } from "react";
 
 // Routing
 import { navigate } from "hookrouter";
@@ -17,11 +17,16 @@ const Home = ({ setLogin, films, param }) => {
 
   useEffect(() => {
     setLogin(false);
-    setInterval(
-      () => updateWatchlist(JSON.parse(localStorage.getItem("favs")) || []),
-      100
-    );
+    updateLS();
   }, []);
+
+  const updateLS = useCallback(() => {
+    if (param === undefined || param === "") {
+      setInterval(() => {
+        updateWatchlist(JSON.parse(localStorage.getItem("favs")) || []);
+      }, 100);
+    }
+  }, [1000]);
 
   return (
     <Fragment>

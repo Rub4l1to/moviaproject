@@ -41,12 +41,23 @@ const Film = ({ element, favFilms }) => {
   };
 
   return (
-    <>
-      <Card {...{  poster: cleanUrl(Poster), showModal, handleFav, handleDeleteFav, fav, setFav }}/>
+    <Fragment>
+      <Card
+        {...{
+          poster: cleanUrl(Poster),
+          showModal,
+          handleFav,
+          handleDeleteFav,
+          fav,
+          setFav,
+        }}
+      />
       {modal && (
-        <Modal {...{ element, modal, showModal, handleFav, handleDeleteFav, fav }} />
+        <Modal
+          {...{ element, modal, showModal, handleFav, handleDeleteFav, fav }}
+        />
       )}
-    </>
+    </Fragment>
   );
 };
 

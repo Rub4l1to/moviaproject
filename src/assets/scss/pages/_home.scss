@@ -69,3 +69,20 @@
 .section-films {
   overflow: hidden;
 }
+
+.section-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+
+  &__item {
+    flex: 0 1 calc(15% - 1em);
+  }
+}
+
+.section-titles {
+  display: grid;
+  // grid-template-columns: repeat(6, 1fr);
+  padding-top: 10em;
+}

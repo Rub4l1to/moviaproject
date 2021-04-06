@@ -12,8 +12,6 @@ const SeachInput = () => {
 
   useEffect(() => {
     
-    // if(search.length >= 1) navigate(`/home/${search}`)
-
     if(localStorage.getItem('user')){
       if(search.length === 0) navigate(`/home`)
       if(search.length >= 1) navigate(`/home/${search}`)

@@ -4,8 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 import Swiper, { Navigation } from "swiper";
 import "swiper/swiper-bundle.css";
 
-// import Swiper from "swiper";
-
 // Components
 import { Film } from "..";
 
@@ -19,7 +17,7 @@ const Slider = ({ films, favFilms }) => {
     swiper.current = new Swiper(".swiper-container", {
       effect: "coverflow",
       mousewheelControl: true,
-      grabCursor: true,
+      // grabCursor: true,
       spaceBetween: 20,
       observer: true,
       coverflowEffect: {
@@ -31,9 +29,6 @@ const Slider = ({ films, favFilms }) => {
       },
       breakpoints: {
         0: {
-          // slidesPerView: 6.2,
-        },
-        320: {
           slidesPerView: 1,
         },
         480: {
