@@ -29,11 +29,9 @@
     cursor: pointer;
 
     & > svg {
-      // background-color: $third-cl;
       border-radius: 50%;
       padding: 8px;
-
-      // transition: transform 0.25s, opacity 0.25s;
+      
       &:hover {
         transform: rotate(270deg);
         opacity: 1;
@@ -70,4 +68,8 @@
 .ReactModal__Overlay {
   z-index: 200 !important;
   background-color: rgba(24, 23, 23, 0.897) !important;
+}
+
+.ReactModal__Body--open{
+  overflow: hidden;
 }

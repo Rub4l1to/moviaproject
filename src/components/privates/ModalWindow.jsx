@@ -10,7 +10,7 @@ import {
 import { A } from "hookrouter";
 import cleanUrl from "../../middleware/CleanURL";
 
-Modal.setAppElement("#main");
+Modal.setAppElement("#modal");
 
 const ModalWindow = ({
   element,

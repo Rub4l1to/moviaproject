@@ -4,6 +4,10 @@
   padding: 10px 30px;
   transition: width 300ms ease;
   overflow: hidden;
+  display: none;
+  @include respond(tab-port){
+    display: block;
+  }
 
   &--expand {
     width: 300px;
