@@ -72,20 +72,39 @@
 
 .section-list {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 1fr;
   column-gap: 20px;
   row-gap: 20px;
 
+  @include respond(phone) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include respond(tab-port) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @include respond(tab-land) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  @include respond(small-desktop) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
   &__item {
-    flex: 0 1 calc(15% - 1em);
+    flex: 0 1 15%;
   }
 }
 
 .section-titles {
   display: grid;
-  grid-template-columns: 150px auto;
+  grid-template-columns: 1fr;
   padding-top: 10em;
+  row-gap: 20px;
   align-items: flex-start;
+
+  @include respond(tab-port) {
+    grid-template-columns: 150px auto;
+  }
+
   &__related {
     color: #ffffff;
     font-family: Montserrat;
@@ -100,4 +119,9 @@
   &:hover &__line {
     color: $main-cl;
   }
+}
+
+.section-movies {
+  margin-top: 12em;
+  padding-bottom: 4em;
 }

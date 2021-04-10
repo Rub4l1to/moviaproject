@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 
 // Navigation
-import { navigate, useQueryParams } from "hookrouter";
+import { navigate } from "hookrouter";
 
 // Icons
 import { FaTimes, FaSearch } from "react-icons/fa";

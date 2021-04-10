@@ -1,6 +1,10 @@
 .modal {
-  width: 1135px;
-  padding: 10px 0 50px 0;
+  width: 300px;
+  padding: 10px 0 20px 0;
+  @include respond(small-desktop) {
+    padding: 10px 0 50px 0;
+  }
+
   position: relative;
   background-color: #141414;
   top: 50%;
@@ -9,6 +13,16 @@
   color: white;
   outline: none;
   animation: fadeEffect ease 0.5s;
+
+  @include respond(phone) {
+    width: 600px;
+  }
+  @include respond(tab-land) {
+    width: 900px;
+  }
+  @include respond(small-desktop) {
+    width: 1135px;
+  }
 
   &__jumbotron {
     width: 100%;
@@ -24,14 +38,14 @@
   &__close {
     font-size: 50px;
     position: absolute;
-    top: 30px;
-    right: 50px;
+    top: 20px;
+    right: 10px;
     cursor: pointer;
 
     & > svg {
       border-radius: 50%;
       padding: 8px;
-      
+
       &:hover {
         transform: rotate(270deg);
         opacity: 1;
@@ -41,16 +55,26 @@
 
   &__info {
     display: grid;
-    grid-template-columns: auto 450px;
+    grid-template-columns: auto;
     column-gap: 20px;
+    row-gap: 20px;
+
+    @include respond(small-desktop) {
+      grid-template-columns: auto 450px;
+    }
   }
 
   &__itemInfo {
     font-family: Montserrat;
     font-size: 16px;
     line-height: 20px;
-    @include flexbox(flex-start, normal);
+    display: none;
     margin: 15px 0;
+    padding: 0 24px;
+    @include respond(tab-port) {
+      @include flexbox(flex-start, normal);
+      // width: 600px;
+    }
 
     & > span {
       display: block;
@@ -70,6 +94,6 @@
   background-color: rgba(24, 23, 23, 0.897) !important;
 }
 
-.ReactModal__Body--open{
+.ReactModal__Body--open {
   overflow: hidden;
 }

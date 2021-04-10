@@ -4,7 +4,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { A } from "hookrouter";
 import validate from "../../middleware/Validate";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { checkUser, getItemLS } from "../../hooks/LocalStorage";
+import { checkUser } from "../../hooks/LocalStorage";
 import { navigate } from "hookrouter";
 
 const Form = ({ isLogin }) => {

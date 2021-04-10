@@ -4,7 +4,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useRoutes } from "hookrouter";
 
 // Components
-import { NotFound, Auth, Home, Search, Header } from "./components";
+import { NotFound, Auth, Home, Header, Movies } from "./components";
 
 // Api
 import { getFilms } from "./hooks/Api";
@@ -22,14 +22,17 @@ const App = () => {
   const routes = {
     "/": () => <Auth {...{ setLogin }} />,
     "/auth*": () => <Auth {...{ setLogin }} />,
-    "/home": () => <Home {...{ setLogin, films}} />,
-    "/search/:param":  ({ param })  => <Home {...{ setLogin, films, param}} />,
+    "/home": () => <Home {...{ setLogin, films }} />,
+    "/search/:param": ({ param }) => <Home {...{ setLogin, films, param }} />,
+    "/movies": () => <Movies  {...{ setLogin, films }} />,
   };
 
   const routeResult = useRoutes(routes);
 
   const getData = async () => {
-    const { data: { results } } = await getFilms();
+    const {
+      data: { results },
+    } = await getFilms();
     const omdb = await loadFilms(results);
     setFilms(omdb);
   };

@@ -8,6 +8,7 @@ import Footer from "./layouts/Footer";
 import Home from "./views/Home";
 import Auth from "./views/Auth";
 import Search from "./views/Search";
+import Movies from "./views/Movies";
 
 // Auth views
 import Login from "./auth/Login";
@@ -25,4 +26,4 @@ import Card from './privates/Card';
 import Film from './privates/Film';
 import Hero from './privates/Hero';
 
-export { Hero, Footer, Film, Modal, Slider, Card, Form, NotFound, Home, Header, Auth, SearchInput, Search, Login, Register, Title, SubTitle };
+export { Hero, Movies, Footer, Film, Modal, Slider, Card, Form, NotFound, Home, Header, Auth, SearchInput, Search, Login, Register, Title, SubTitle };

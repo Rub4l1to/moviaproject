@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FaEye, FaPlus, FaTrashAlt } from "react-icons/fa";
 
 const Card = ({ poster, showModal, handleFav, handleDeleteFav, fav }) => {

@@ -23,16 +23,13 @@ const Header = ({ simple }) => {
     <Fragment>
       <nav className="nav">
       
-          <div class="nav__dropdown">
-            <span class="nav__dropbtn">Browse</span>
-            <div class="nav__dropdown-content">
+          <div className="nav__dropdown">
+            <span className="nav__dropbtn">Browse</span>
+            <div className="nav__dropdown-content">
               <A href="/home" className="nav__item">
                 Home
               </A>
-              <A href="/search" className="nav__item">
-                Peliculas
-              </A>
-              <A href="/search" className="nav__item">
+              <A href="/movies" className="nav__item">
                 Peliculas
               </A>
             </div>
@@ -41,11 +38,11 @@ const Header = ({ simple }) => {
       </nav>
       <SearchInput />
       <div className="header__profile">
-        <div class="dropdown">
-          <A href="/" className="dropbtn header__item">
+        <div className="nav__dropdown-profile">
+          <span  className="nav__dropbtn--profile header__item">
             <img className="header__photo" src={avatar} alt="" />
-          </A>
-          <div class="dropdown-content">
+          </span>
+          <div className="nav__dropdown-content--profile">
             <A
               href="/"
               className="nav__item"
