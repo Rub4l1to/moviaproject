@@ -1,10 +1,6 @@
 .card {
   outline: none;
-  height: 450px !important;
-
-  @include respond(tab-land){
-    height: 487px !important;
-  }
+  height: 417px !important;
   position: relative;
   overflow: hidden;
 
